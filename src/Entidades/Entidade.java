@@ -1,4 +1,4 @@
-package Entidade;
+package Entidades;
 
 public abstract class Entidade {
     protected int ataque;
@@ -11,27 +11,27 @@ public abstract class Entidade {
         vida = _vida;
     }
 
-    int getAtaque(){
+    public int getAtaque(){
         return ataque;
     }
 
-    void setAtaque(int novoAtaque){
-        ataque = novoAtaque;
+    public void setAtaque(int novoAtaque){
+        ataque += novoAtaque;
     }
 
-    int getDefesa(){
+    public int getDefesa(){
         return defesa;
     }
 
-    void setDefesa(int novaDefesa){
-        defesa = novaDefesa;
+    public void setDefesa(int novaDefesa){
+        defesa += novaDefesa;
     }
 
-    int getVida(){
+    public int getVida(){
         return vida;
     }
 
-    void setVida(int novaVida){
-        vida = novaVida;
+    public void setVida(int novaVida){
+        vida += novaVida;
     }
 }
