@@ -1,12 +1,13 @@
 package Entidades;
 
+import Componentes_Principais.Mapa;
 import Itens.Item;
 
 public class Heroi extends Entidade{
     Item maoEsquerda;
     Item maoDireita;
 
-    Heroi(int _ataque, int _defesa, int _vida) {
+    public Heroi(int _ataque, int _defesa, int _vida) {
         super(_ataque, _defesa, _vida);
     }
 

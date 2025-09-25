@@ -4,7 +4,7 @@ import Entidades.Heroi;
 
 public class Escudo extends Item{
 
-    Escudo(BonusItem _bonus) {
+    public Escudo(BonusItem _bonus) {
         super(_bonus);
     }
 

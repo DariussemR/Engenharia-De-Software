@@ -4,7 +4,7 @@ import Entidades.Heroi;
 
 public class Espada extends Item{
 
-    Espada(BonusItem _bonus) {
+    public Espada(BonusItem _bonus) {
         super(_bonus);
     }
 

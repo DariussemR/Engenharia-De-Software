@@ -5,7 +5,7 @@ public abstract class Entidade {
     protected int defesa;
     protected int vida;
 
-    Entidade(int _ataque, int _defesa, int _vida) {
+    public Entidade(int _ataque, int _defesa, int _vida) {
         ataque = _ataque;
         defesa = _defesa;
         vida = _vida;

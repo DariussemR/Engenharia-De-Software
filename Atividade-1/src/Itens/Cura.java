@@ -4,7 +4,7 @@ import Entidades.Heroi;
 
 public class Cura extends Item{
 
-    Cura(BonusItem _bonus) {
+    public Cura(BonusItem _bonus) {
         super(_bonus);
     }
 

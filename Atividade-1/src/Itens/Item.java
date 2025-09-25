@@ -5,7 +5,7 @@ import Entidades.Heroi;
 public abstract class Item {
     protected BonusItem bonus;
 
-    Item(BonusItem _bonus){
+    public Item(BonusItem _bonus){
         bonus = _bonus;
     }
 
