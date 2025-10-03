@@ -57,42 +57,43 @@ public class Mapa {
             return false;
         }
 
-        if (this.matriz[x][y] == '=') {
-            return true;
-        }
-
         switch(this.matriz[x][y]){
 
             case '=':
                 return true;
 
-            // Entidades
+            // --- Encontros (Combate) ---
 
-            case '?':
+            case '?':   // Batalha com Bicho Papão
                 Bicho_Papao bichoPapao = new Bicho_Papao(2, 2, 5);
                 break;
-            case '*':
+            case '*':   // Batalha com Curupira
                 Curupira curupira = new Curupira(3, 1, 3);
                 break;
-            case '^':
+
+
+            // --- Encontros (Ajudantes) ---
+
+            case '^':   // Interage com Duente
                 Duende duende = new Duende();
                 break;
-            case '&':
+            case '&':   // Interage com Anão
                 Anao anao = new Anao();
                 break;
 
-            // Equipamentos
 
-            case 'e':
+            // --- Equipamentos ---
+
+            case 'e':   // Encontra espada
                 Espada espada = new Espada(BonusItem.Bonus_Espada);
-            case 'd':
+            case 'd':   // Encontra escudo
                 Escudo escudo = new Escudo(BonusItem.Bonus_Escudo);
-            case 'c':
+            case 'c':   // Encontra cura
                 Cura cura = new Cura(BonusItem.Bonus_Cura);
         }
 
         // Atualiza posição atual do jogador;
-        this.matriz[x][y] = 8;
+        this.matriz[y][x] = '○';
 
         // Imprime o mapa
         this.imprimeMapa(x, y);
@@ -113,29 +114,38 @@ public class Mapa {
             //4. Vou para cima
 
         // 1
-        if (this.matriz[x+1][y] != '#' && this.matriz[x+1][y] != '8'){
+        if (this.matriz[x+1][y] != '#' && this.matriz[x+1][y] != '•'){
+            this.matriz[y][x] = '•';
+
             if(encontraSaida(x+1, y) == true)
                 return true;
         }
 
-        if (this.matriz[x][y+1] != '#' && this.matriz[x][y+1] != '8'){
+        if (this.matriz[x][y+1] != '#' && this.matriz[x][y+1] != '•'){
+            this.matriz[y][x] = '•';
+
             if(encontraSaida(x, y+1) == true){
                 return true;
             }
         }
 
-        if (this.matriz[x-1][y] != '#' && this.matriz[x-1][y] != '8'){
+        if (this.matriz[x-1][y] != '#' && this.matriz[x-1][y] != '•'){
+            this.matriz[y][x] = '•';
+
             if(encontraSaida(x-1, y) == true){
                 return true;
             }
         }
 
-        if (this.matriz[x][y-1] != '#' && this.matriz[x][y-1] != '8'){
+        if (this.matriz[x][y-1] != '#' && this.matriz[x][y-1] != '•'){
+            this.matriz[y][x] = '•';
+
             if(encontraSaida(x, y+1) == true){
                 return true;
             }
         }
 
+        System.out.println("Não encontrou saída");
         return false;
     }
 
